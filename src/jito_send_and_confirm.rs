@@ -45,14 +45,14 @@ use crate::send_and_confirm::ComputeBudget;
 
 pub const JITO_RECIPIENTS: [Pubkey; 8] = [
     // mainnet
-    pubkey!("6JD2Z1szAg8AQPGrV1zpe5JanpEFmA5UApNwi8MHk5yv"),
-    pubkey!("6sc32i5BCiwxa1zM1aaU1e2DG66nhT94jUWBsD3aASJt"),
-    pubkey!("2xiRVSurnkxnMqvQ3TjGmd4utLY4NiFu22JVivHzGA3C"),
-    pubkey!("84UpERmBSC1ybZrhrKSUxGFQoXdCtXPsHUJKcC8ayeLS"),
-    pubkey!("6JD2Z1szAg8AQPGrV1zpe5JanpEFmA5UApNwi8MHk5yv"),
-    pubkey!("6sc32i5BCiwxa1zM1aaU1e2DG66nhT94jUWBsD3aASJt"),
-    pubkey!("2xiRVSurnkxnMqvQ3TjGmd4utLY4NiFu22JVivHzGA3C"),
-    pubkey!("84UpERmBSC1ybZrhrKSUxGFQoXdCtXPsHUJKcC8ayeLS"),
+    pubkey!("96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5"),
+    pubkey!("HFqU5x63VTqvQss8hp11i4wVV8bD44PvwucfZ2bU7gRe"),
+    pubkey!("Cw8CFyM9FkoMi7K7Crf6HNQqf4uEMzpKw6QNghXLvLkY"),
+    pubkey!("ADaUMid9yfUytqMBgopwjb2DTLSokTSzL1zt6iGPaS49"),
+    pubkey!("DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh"),
+    pubkey!("ADuUkR4vqLUMWXxW9gh6D6L8pMSawimctcNZ5pGwDcEt"),
+    pubkey!("DttWaMuVvTiduZRnguLF7jNxTgiMBZ1hyAumKUiL2KRL"),
+    pubkey!("3AVi9Tg9Uo68tJfuvoKvqKNWKkC5wPdSSdeBnizKZ6jT"),
 
     // testnet
     // pubkey!("4xgEmT58RwTNsF5xm2RMYCnR1EVukdK8a1i2qFjnJFu3"),
@@ -279,7 +279,7 @@ impl Miner {
             sleep(Duration::from_millis(400 * ( attempts + 1 ))).await;
 
             attempts += 1;
-            if attempts > 3 {
+            if attempts > 5 {
                 progress_bar.finish_with_message(format!("{}: Max retries", "ERROR".bold().red()));
                 return Err(Box::new(ClientError {
                     request: None,
